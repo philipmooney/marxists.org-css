@@ -16,17 +16,84 @@
 /* General								*/
 /* =====================================*/
 
-body { background : #ffffff; color: #000000 }
-a:link { color: #000099; background: transparent }
-a:visited { color: #883399; background: transparent }
-a.mecw {color: #aaaaaa; background: transparent; text-decoration: none }
+:root {
+  --color-black: rgb(0, 0, 0);
+  --color-gray-20: rgb(51, 51, 51); /* #333333 */
+  --color-gray-40: rgb(102, 102, 102); /* #666666 */
+  --color-gray-60: rgb(153, 153, 153); /* #999999 */
+  --color-gray-67: rgb(170, 170, 170); /* #aaaaaa */
+  --color-gray-80: rgb(204, 204, 204); /* #cccccc */
+  --color-gray-93: rgb(238, 238, 238); /* #eeeeee */
+  --color-gray-94: rgb(239, 239, 239); /* #efefef */
+  --color-white: rgb(255, 255, 255);
+  --color-blue-20: rgb(0, 0, 51); /* #000033 */
+  --color-blue-40: rgb(0, 0, 102); /* #000066 */
+  --color-blue-53: rgb(0, 0, 136); /* #000088 */
+  --color-blue-60: rgb(0, 0, 153); /* #000099 */
+  --color-purple: rgb(136, 51, 153); /* #883399 */
+  --color-pink-flat: rgb(255, 204, 204); /* #ffcccc */
+  --color-pink-bright: rgb(255, 153, 153); /* #ff9999 */
+}
+
+body {
+  --a--color: var(--color-blue-60);
+  --a-visited--color: var(--color-purple);
+  --a-mecw--color: var(--color-gray-67);
+  --body--bg-color: var(--color-white);
+  --body--color: var(--color-black);
+  --div-border--bg-color: var(--color-white);
+  --div-border--border-color: var(--color-blue-53);
+  --hr--bg-color: initial;
+  --h1--color: var(--color-blue-20);
+  --h1-big--color: var(--color-blue-20);
+  --h2--color: var(--color-blue-20);
+  --h3--color: var(--color-blue-20);
+  --h4--color: var(--color-blue-20);
+  --h5--color: var(--color-blue-20);
+  --h6--color: var(--color-blue-20);
+  --h7--color: var(--color-blue-40);
+  --sup-anote--color: var(--color-blue-20);
+  --sup-ednote--color: var(--color-blue-20);
+  --span-inote--color: var(--color-gray-40);
+  --span-info--color: var(--color-blue-20);
+  --span-term--color: var(--color-blue-20);
+  --span-date--color: var(--color-gray-20);
+  --span-context--color: var(--color-gray-60);
+  --p-information--color: var(--color-blue-20);
+  --p-transcriber--color: var(--color-gray-40);
+  --p-endnote--color: var(--color-black);
+  --p-inline--color: var(--color-gray-40);
+  --p-toc--color: var(--color-blue-20);
+  --p--title2--color: var(--color-blue-20);
+  --p-pagenote--color: var(--color-blue-20);
+  --p-pagenoteb--color: var(--color-gray-40);
+  --table-date--bg-color: var(--color-gray-93);
+  --td-border--border-color: black;
+  --td-head--bg-color: var(--color-gray-60);
+  --tr-alt--bg-color: var(--color-gray-80);
+  --tr-total--bg-color: var(--color-pink-flat);
+  --tr-total--color: inherit;
+  --tr-totalb--bg-color: var(--color-pink-bright);
+  --tr-totalb--color: inherit;
+  --td-index--bg-color: var(--color-gray-94);
+  --td-index--color: var(--color-gray-60);
+  --td-index-alt--bg-color: var(--color-white);
+  --td-index-alt--color: var(--color-gray-60);
+  --td-indexb--bg-color: var(--color-white);
+  --td-indexb--color: var(--color-gray-60);
+}
+
+body { background : var(--body--bg-color); color: var(--body--color); }
+a:link { color: var(--a--color); background: transparent }
+a:visited { color: var(--a-visited--color); background: transparent }
+a.mecw {color: var(--a-mecw--color); background: transparent; text-decoration: none }
 
 div.border {
 	border-style: solid;
-	background: #ffffff; 
+	background: var(--div-border--bg-color);
 	width: 99%; 
 	padding: 1em; 
-	border: 0.1em solid #000088;
+	border: 0.1em solid var(--div-border--border-color);
 	}
 
 img.right { float: right; margin: 2em; }
@@ -41,7 +108,7 @@ img.middle { vertical-align: middle; }
 hr.section { width: 33%; margin-left: auto; margin-right: auto; height: 1px; }
 hr.base { width: 92%; text-align: center; height: 1px; }
 hr.end { width: 92%; text-align: center; height: 1px; }
-hr { width: 88%; text-align: center; height: 1px;  }
+hr { width: 88%; text-align: center; height: 1px; background-color: var(--hr--bg-color); }
 
 em { word-spacing: 0.2em }
 em.stretch { letter-spacing: 0.2em; word-spacing: 0.1em }
@@ -68,7 +135,7 @@ p {
 /* Document Title */
 H1 {
  background: transparent;
- color: #000033;
+ color: var(--h1--color);
  font-weight: bold; 
  font-size: xx-large; 
  font-family: "Hoefler Text", "Century Schoolbook", "Georgia", serif;
@@ -79,7 +146,7 @@ H1 {
  
  H1.big {
  background: transparent;
- color: #000033;
+ color: var(--h1-big--color);
  font-weight: bold; 
  font-size: 28pt; 
  font-family: "Hoefler Text", "Century Schoolbook", "Georgia", serif;
@@ -91,7 +158,7 @@ H1 {
 /* Authors' name */
 H2 { 
  background: transparent;
- color: #000033;
+ color: var(--h2--color);
  font-weight: bold; 
  font-size: large; 
  line-height: 150%;
@@ -104,7 +171,7 @@ H2 {
 /* Chapter Title */
 H3 {
  background: transparent;
- color: #000033; 
+ color: var(--h3--color);
  font-weight: bold;
  text-align: center;
  font-family : "Century Schoolbook", "Hoefler Text", "Georgia", serif;
@@ -117,7 +184,7 @@ H3 {
 /* Section Title */
 H4 {
  background: transparent;
- color: #000033; 
+ color: var(--h4--color);
  font-weight: bold;
  text-align: center;
  font-family : "Arial", sans-serif;
@@ -130,7 +197,7 @@ H4 {
 /* Sub Section 2 */
 H5 {
  background: transparent;
- color: #000033; 
+ color: var(--h5--color);
  font-weight: bold;
  text-align: center;
  font-family : "Arial", sans-serif;
@@ -143,7 +210,7 @@ H5 {
 /* Sub Section 3 */
 H6 {
  background: transparent;
- color: #000033; 
+ color: var(--h6--color);
  font-weight: bold;
  text-align: left;
  font-family : "Arial", sans-serif;
@@ -156,7 +223,7 @@ H6 {
  /* Sub Section 4 */
 H7 {
  background: transparent;
- color: #000066; 
+ color: var(--h7--color);
  font-weight: normal;
  text-align: left;
  font-family : "Arial", sans-serif;
@@ -188,14 +255,14 @@ sub {
 
 /* Author's */
 sup.anote {
- color: #000033; 
+ color: var(--sup-anote--color);
  font-family : "Georgia", serif;
  font-weight: bold;
  }
  
 /* Editor's */
 sup.ednote {
- color: #000033; 
+ color: var(--sup-ednote--color);
  font-family : "Courier New", monospace;
  }
  
@@ -232,7 +299,7 @@ sup.eq {
 /* Used in the info block */
 span.info {
  background: transparent;
- color: #000033; 
+ color: var(--span-info--color);
  font-family: "Arial", sans-serif;
  font-size: 11pt;
  font-weight: bold;
@@ -241,7 +308,7 @@ span.info {
 /* Used for notes in the text */
 span.term {
  background: transparent;
- color: #000033; 
+ color: var(--span-term--color);
  font-family : "Arial", sans-serif;
  font-size: 12pt;
  font-weight: bold;
@@ -250,7 +317,7 @@ span.term {
 /* indiscreet text (primarily for dates) */
 span.date {
  background: transparent;
- color: #333333;
+ color: var(--span-date--color);
  font-family: "Arial", sans-serif;
  font-size: small;
  font-weight: normal;
@@ -259,14 +326,14 @@ span.date {
 /* Editorial notes in text */
 span.inote {
  background: transparent;
- color: #666666; 
+ color: var(--span-inote--color);
  font-family : "Georgia", serif;
  font-size: 12pt;
  font-weight: normal;
  }
  
 /* abstracts */
-span.context {  background: transparent; color: #999999 }
+span.context {  background: transparent; color: var(--span-context--color); }
 
 /* Greek text */
 span.greek { font-family: symbol }
@@ -283,7 +350,7 @@ p.fst {
 
 /* Document Bibliographical Informaiton */
 p.information { 
- color: #000033; 
+ color: var(--p-information--color);
  text-indent: 0em; 
  font-size: 11pt; 
  line-height: 125%;
@@ -303,7 +370,7 @@ p.from
  }
 
 p.transcriber {
- color: #666666; 
+ color: var(--p-transcriber--color);
  text-indent: 0em;
  font-family : "Arial";
  font-size: 8pt;
@@ -313,7 +380,7 @@ p.transcriber {
  }
 
 /* footnote text */
- p.endnote { color: #000000;
+ p.endnote { color: var(--p-endnote--color);
  font-size: 11pt;
  text-indent: 0em;
  line-height: 130%;
@@ -363,7 +430,7 @@ p.quote-list {
 
 /* Citation (Quote citied) */
 p.inline {
- color: #666666; 
+ color: var(--p-inline--color);
  text-indent: 0em;
  font-family : "Arial", sans-serif;
  font-size: x-small;
@@ -378,7 +445,7 @@ p.inline {
 
 /* Table of Contents */
 p.toc {
- color: #000033; 
+ color: var(--p-toc--color);
  text-indent: 0em;
  font-weight: bold;
  font-family : "Helvetica", "Arial", sans-serif;
@@ -410,7 +477,7 @@ p.title {
  }
  
  p.title2 { 
- color: #000033;
+ color: var(--p-title2--color);
  text-indent: 0em;
  font-weight: bold;
  text-align: left;
@@ -434,7 +501,7 @@ p.sig {
 /* Misc page note */
 p.pagenote {
  background: transparent;
- color: #000033; 
+ color: var(--p-pagenote--color);
  font-family : "Arial", sans-serif;
  font-size: x-small;
  text-align: center;
@@ -464,7 +531,7 @@ p.sub {
 /* Misc page note (justified) */
 p.pagenoteb {
  background: transparent;
- color: #666666; 
+ color: var(--p-pagenoteb--color);
  font-family : "Arial", sans-serif;
  font-size: x-small;
  text-align: justify;
@@ -583,8 +650,6 @@ table { margin-left: auto; margin-right: auto; }
 
 td {
  text-indent: 0em;
- background: #ffffff;
- color: #000000; 
  vertical-align: top;
  text-align: left;
  line-height: 125%;
@@ -593,7 +658,7 @@ td {
  }
 
 table.data {
- background: #eeeeee;
+ background: var(--table-date--bg-color);
  font-family: "Georgia", monospace;
  font-size: 10pt;
  }
@@ -601,13 +666,13 @@ table.data {
  /* Experimental begins, 27.11.2018, —JL */
 
 table.border { border-collapse: collapse }
-td.border { border: 1px solid black; padding: 3px; }
+td.border { border: 1px solid var(--td-border--border-color); padding: 3px; }
 
 /* Experimental ends */
 
 /* Column Headings */ 
-td.head {
- background: #999999;
+th, td.head {
+ background: var(--td-head--bg-color);
  font-weight: bold;
  text-align: center;
  font-family: "Georgia", serif;
@@ -615,15 +680,15 @@ td.head {
  }
 
 /* Row Colors */
-tr.alt { background: #cccccc; }
-tr.total { background: #ffcccc; }
-tr.totalb { background: #ff9999; }
+tr.alt { background: var(--tr-alt--bg-color); }
+tr.total { background: var(--tr-total--bg-color); color: var(--tr-total--color);}
+tr.totalb { background: var(--tr-totalb--bg-color); color: var(--tr-totalb--color);}
 
 
 
 td.index {
- background: #efefef;
- color: #999999; 
+ background: var(--td-index--bg-color);
+ color: var(--td-index--color);
  text-indent: 0em;
  font-family : "Helvetica", "Arial", sans-serif;
  font-size: 12pt;
@@ -633,8 +698,8 @@ td.index {
  
 /* Every alternate row */
 td.index-alt {
- background: #ffffff;
- color: #999999; 
+ background: var(--td-index-alt--bg-color);
+ color: var(--td-index-alt--color);
  text-indent: 0em;
  font-family : "Helvetica", "Arial", sans-serif;
  font-size: 12pt;
@@ -644,8 +709,8 @@ td.index-alt {
  
 /* Sub-Chapters */
 td.indexb {
- background: #ffffff;
- color: #999999; 
+ background: var(--td-indexb--bg-color);
+ color: var(--td-indexb--color);
  text-indent: 0em;
  font-family : "Helvetica", "Arial", sans-serif;
  font-size: 10pt;
